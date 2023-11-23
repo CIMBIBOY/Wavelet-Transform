@@ -1,0 +1,31 @@
+
+†
+java:S1192D"kDefine a constant instead of duplicating this literal "A kÃ©p nem elÃ©rhetÅ‘, nem lett betÃ¶ltve!" 4 times.(õƒ¾èşÿÿÿÿ
+‘
+java:S1192b"{Define a constant instead of duplicating this literal "D:\\Egyetem\\Prog\\Prog3\\Nagyhazi\\transformedMatrix.txt" 10 times.(æèºé
+u
+java:S1192d"ZDefine a constant instead of duplicating this literal "Sikeres TranszformÃ¡ciÃ³" 10 times.(‘çùÿÿÿÿ
+m
+java:S1104"RMake matrix a static final constant or non-public and provide accessors if needed.(¿—Âüÿÿÿÿ
+G
+java:S1444",Make this "public static matrix" field final(¿—Âüÿÿÿÿ
+@	java:S106"+Replace this use of System.out by a logger.(Î¸æ
+@	java:S106 "+Replace this use of System.out by a logger.(¡†‰ı
+h
+java:S3776#"RRefactor this method to reduce its Cognitive Complexity from 50 to the 15 allowed.(ÛÛ¯ø
+=
+java:S1125*"'Remove the unnecessary boolean literal.( Şîº
+_
+java:S4201Y"IRemove this unnecessary null check; "instanceof" returns false for nulls.(¥„„
+`
+java:S4201º"IRemove this unnecessary null check; "instanceof" returns false for nulls.(¥„„
+e
+java:S1871Ç"IThis case's code block is the same as the block for the case on line 193.(µ»ïşıÿÿÿÿ
+e
+java:S1871Å"IThis case's code block is the same as the block for the case on line 193.(‰ÆÄÎşÿÿÿÿ
+e
+java:S1871Ã"IThis case's code block is the same as the block for the case on line 193.(úâúÿÿÿÿ
+C
+java:S1125é"'Remove the unnecessary boolean literal.(àİ÷×úÿÿÿÿ
+8
+java:S1116í"Remove this empty statement.(ôŸìúÿÿÿÿ
