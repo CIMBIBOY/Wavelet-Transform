@@ -14,6 +14,8 @@ public class ImageManipulation {
     private int imgDim;
     private int level;
 
+    private String dir;
+
     public ImageManipulation()
     {
         imgDim = 0; level = 0;
@@ -42,7 +44,7 @@ public class ImageManipulation {
         JFileChooser fileChooser = new JFileChooser();
 
         // Kezdő mappa
-        fileChooser.setCurrentDirectory(new File("/Users/czimbermark/IdeaProjects/Wavelet"));
+        fileChooser.setCurrentDirectory(new File(dir));
 
         // Felhasználói választás 
         int returnVal = fileChooser.showOpenDialog(null);
@@ -94,6 +96,9 @@ public class ImageManipulation {
             // Create a file chooser
             JFileChooser fileChooser = new JFileChooser();
 
+            // Kezdő mappa
+            fileChooser.setCurrentDirectory(new File(dir));
+
             // Show save dialog
             int userSelection = fileChooser.showSaveDialog(null);
 
@@ -117,6 +122,22 @@ public class ImageManipulation {
         System.out.println("Error in saving");
         return false;
     }
+
+    public boolean LoadTestImage()
+    {
+        String imagePath = dir + File.separator + "Grayscale1.jpg";
+
+        try {
+            // Load the test image
+            mImage = new ImageIcon(ImageIO.read(new File(imagePath)));
+            return true;
+        } catch (IOException e) {
+            // Image loading failed, show a message
+            e.printStackTrace(); // Log the exception for debugging
+            return false;
+        }
+    }
+
 
     public void show(MenuFrame menu)
     {
@@ -162,4 +183,6 @@ public class ImageManipulation {
     public int getImgDim() { return imgDim; }
 
     public int getLevel() { return level; }
+
+    public void setDir(String direc) { dir = direc; }
 }

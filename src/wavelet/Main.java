@@ -12,6 +12,9 @@ public class Main {
 
     public static void main(String[] args)
     {
+        // image.setDir(menuFrame.getDirString());
+        // if(!image.LoadTestImage())  JOptionPane.showMessageDialog(menuFrame.getFrame(), "The test image 'Grayscale1.jpg' couldn't be loaded.", "Image Loading Failed", JOptionPane.ERROR_MESSAGE);;
+
         menuFrame.getLoadMenuItem().addActionListener(e ->
         {
             if(!image.LoadImage()) {
