@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.util.Objects;
 
-public class MenuFrame implements ActionListener
+public class MenuFrame extends Component implements ActionListener
 {
     private JFrame frame; // creating frame
     private JMenuBar menuBar; // creating menu bar 
@@ -13,8 +13,6 @@ public class MenuFrame implements ActionListener
     private JMenuItem loadMenuItem; // creating items 
     private JMenuItem saveMenuItem; 
     private JMenuItem exitMenuItem;
-
-    private String directory = "";
 
     private JMenu waveletParametersMenu;
     private JTable waveletParametersTable;
@@ -119,31 +117,11 @@ public class MenuFrame implements ActionListener
         // bar beállítása
         frame.setJMenuBar(menuBar);
 
-        directory = getWorkingDirectory();
-
         frame.setVisible(true);
     }
 
     // Inside MenuFrame class
-    private String getWorkingDirectory() {
-        if(!Objects.equals(directory, "")) return directory;
 
-        JOptionPane.showMessageDialog(frame,
-                "Please specify the directory where 'Grayscale1.jpg' is located.",
-                "Working Directory Not Specified",
-                JOptionPane.PLAIN_MESSAGE);
-
-        JFileChooser fileChooser = new JFileChooser();
-        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
-
-        int returnVal = fileChooser.showOpenDialog(frame);
-
-        if (returnVal == JFileChooser.APPROVE_OPTION) {
-            return fileChooser.getSelectedFile().getAbsolutePath();
-        } else {
-            return null; // User canceled the operation
-        }
-    }
 
     @Override // akció végrehajtó
     public void actionPerformed(ActionEvent e) 
@@ -184,7 +162,5 @@ public class MenuFrame implements ActionListener
     public JMenuItem getExitMenuItem() {
         return exitMenuItem;
     }
-
-    public String getDirString() { return directory; }
 }
 

@@ -130,6 +130,8 @@ public class ImageManipulation {
         try {
             // Load the test image
             mImage = new ImageIcon(ImageIO.read(new File(imagePath)));
+            mBufferedImage = createBufferedImage(mImage);
+
             return true;
         } catch (IOException e) {
             // Image loading failed, show a message
@@ -163,6 +165,32 @@ public class ImageManipulation {
 
         menu.getFrame().revalidate();
         System.out.println("Image shown");
+    }
+
+    public void getWorkingDirectory(JFrame frame) {
+        if (dir != null) {
+            return;
+        }
+
+        JOptionPane.showMessageDialog(frame,
+                "Please specify the directory where 'Grayscale1.jpg' is located.",
+                "Working Directory Not Specified",
+                JOptionPane.PLAIN_MESSAGE);
+
+        JFileChooser fileChooser = new JFileChooser();
+        fileChooser.setFileSelectionMode(JFileChooser.DIRECTORIES_ONLY);
+
+        int returnVal = fileChooser.showOpenDialog(frame);
+
+        if (returnVal == JFileChooser.APPROVE_OPTION) {
+            dir = fileChooser.getSelectedFile().getAbsolutePath();
+        } else {
+            // Optionally handle the case where the user canceled the operation
+            JOptionPane.showMessageDialog(frame,
+                    "Please specify the directory where 'Grayscale1.jpg' is located!",
+                    "Working Directory Not Specified",
+                    JOptionPane.ERROR_MESSAGE);
+        }
     }
 
     public ImageIcon getImage()
